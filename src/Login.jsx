@@ -8,7 +8,7 @@ export default function Login() {
           className="w-full h-full object-cover opacity-50"
           src="image 6.png"
           alt="image not found"
-        />
+        />  
 
         <div className="flex gap-8 w-1/2 flex-col justify-center items-center w-full h-full h-screen ">
           <img src="Frame 1171274783.png" alt="image not found" />
@@ -28,7 +28,7 @@ export default function Login() {
                 Email
               </label>
               <input
-                className="bg-cyan-950 text-white text-sm block mb-2 font-onset m-4 p-2.5 rounded-md w-full "
+                className="bg-[#1B2D47] text-white text-sm block mb-2 font-onset m-4 p-2.5 rounded-md w-full "
                 type="text"
                 name="Email"
                 id="email"
@@ -41,17 +41,17 @@ export default function Login() {
                 Password
               </label>
               <input
-                className="bg-cyan-950 text-white text-sm block mb-2 font-onset m-4 p-2.5 rounded-md w-full"
+                className="bg-[#1B2D47] text-white text-sm block mb-2 font-onset m-4 p-2.5 rounded-md w-full"
                 type="password"
                 name="password"
                 placeholder="Password"
               />
-              <button className="bg-rose-400 text-white m-4 p-2.5 rounded-md w-full">
+              <button className="bg-[#B04759] text-white m-3 p-2.5 rounded-md w-full">
                 Login
               </button>
             </form>
           </div>
-        </div>
+       </div>
       </div>
     </div>
   );
