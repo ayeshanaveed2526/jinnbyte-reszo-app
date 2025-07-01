@@ -1,11 +1,12 @@
 import React from 'react'
+import Login from './Login'
 
 const App = () => {
   return (
   
-      <div className="text-3xl text-blue-600 font-bold underline">
-        Tailwind is working!
-    </div>
+      <div >
+    <Login/>
+      </div>
   )
 }
 
