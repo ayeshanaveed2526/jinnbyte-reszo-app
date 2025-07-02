@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Dashboard() {
   return (
-    <div className="bg-gray-950">
+    <div className="bg-gray-950 min-h-screen">
       <div className="bg-[#131E2E] border-[1px] border-[#232931] flex flex-row justify-between px-4 py-3">
         <div className="min-w-44">
           <img src="Frame 1618875786.png" alt="Logo Reszo" />
@@ -16,36 +16,38 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col bg-[#131E2E] border-[1px] border-[#232931] px-6 py-4 w-[300px] h-[1045px]">
-       <div className="flex flex-col gap-6 text-white">
-         <div className="flex gap-3 bg-[#B04759] px-4 py-3 rounded-[12px]  max-w-[250px] w-72 h-12">
-          <div className="w-6 h-6"><img src="icon1.png" alt="icon" /></div>
-         <div> <a href="Dashboard">  Dashboard</a></div>
-          
+  
+      <div className="flex flex-row">
+      
+        <div className="flex flex-col bg-[#131E2E] border-[1px] border-[#232931] px-6 py-4 w-[300px] h-[calc(100vh-64px)]">
+          <div className="flex flex-col gap-6 text-white">
+            <div className="flex gap-3 bg-[#B04759] px-4 py-3 rounded-[12px] max-w-[250px] w-72 h-12 items-center">
+              <img src="icon1.png" alt="icon" className="w-6 h-6" />
+              <a href="Dashboard">Dashboard</a>
+            </div>
+            <div className="flex items-center gap-3">
+              <img src="icon2.png" alt="icon" className="w-6 h-6" />
+              <a href="Dashboard">Customer Management</a>
+            </div>
+            <div className="flex items-center gap-3">
+              <img src="icon3.png" alt="icon" className="w-6 h-6" />
+              <a href="Dashboard">Restaurant Management</a>
+            </div>
+            <div className="flex items-center gap-3">
+              <img src="icon4.png" alt="icon" className="w-6 h-6" />
+              <a href="Dashboard">Cuisine</a>
+            </div>
+            <div className="flex items-center gap-3">
+              <img src="icon5.png" alt="icon" className="w-6 h-6" />
+              <a href="Dashboard">Help and Support</a>
+            </div>
+          </div>
         </div>
-         <div className="flex items-center gap-3">
-          <div className="w-6 h-6"><img src="icon2.png" alt="icon" /></div>
-         <div> <a href="Dashboard">  Customer Management</a></div>
-          
+        <div className="flex-1 px-10 py-8">
+          <div className="text-white font-onset font-semibold text-2xl">
+            Dashboard
+          </div>
         </div>
-         <div className="flex items-center gap-3">
-          <div className="w-6 h-6"><img src="icon3.png" alt="icon" /></div>
-         <div> <a href="Dashboard">  Restaurant Management</a></div>
-          
-        </div>
-         <div className="flex items-center gap-3">
-          <div className="w-6 h-6"><img src="icon4.png" alt="icon" /></div>
-         <div> <a href="Dashboard">  Cuisine</a></div>
-          
-        </div>
-         <div className="flex items-center gap-3">
-          <div className="w-6 h-6"><img src="icon5.png" alt="icon" /></div>
-         <div> <a href="Dashboard">  Help  and Support</a></div>
-          
-        </div>
-        
-       </div>
-       
       </div>
     </div>
   );
