@@ -34,6 +34,7 @@ export default function Login() {
                       htmlFor="email"
                     >
                       Email
+                       <span className="text-[#FF5655] size-1 font-bold">*</span>
                     </label>
                   </div>
                   <div>
@@ -54,6 +55,7 @@ export default function Login() {
                       htmlFor="password"
                     >
                       Password
+                      <span className="text-[#FF5655] size-1 font-bold">*</span>
                     </label>
                   </div>
                   <div>
@@ -63,6 +65,7 @@ export default function Login() {
                       name="password"
                       placeholder="Password"
                       required
+
                     />
                   </div>
                 </div>
