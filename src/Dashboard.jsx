@@ -51,9 +51,29 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-        <div className="flex-1 justify-between w-[1092px] h-[31px]">
+        <div className="flex-1 justify-between w-[1092px] h-[31px] p-5 ">
           <div className="text-white font-onset font-semibold text-2xl">
-            Dashboard
+            <h2> Dashboard</h2>
+          </div>
+          <div className="flex flex-row gap-4 text-white ">
+            <div
+              className="bg-[#131E2E] p-6 h-40 w-[353.33px] rounded-xl gap-2"
+            >
+              <div className=" flex flex-row text-white font-onset  text-base font-medium">
+                Total Customer
+                <div className="flex flex-row  gap-2 mt-2">
+                   <img src="icon (9).png" alt="" />
+                </div>
+                <div className="text-3xl font-semibold ">1.5K</div>
+              </div>
+            </div>
+            <div className="bg-[#131E2E]  p-6 h-40 w-[353.33px] rounded-xl gap-3">
+              Total Resturants
+            </div>
+            <div className="bg-[#131E2E] p-6 h-40 w-[353.33px] rounded-xl gap-3">
+              
+              Total Reservations
+            </div>
           </div>
         </div>
       </div>
