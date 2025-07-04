@@ -1,83 +1,50 @@
-import React from "react";  
+import React from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-  import BookingTable from "./BookingTable";
+import BookingTable from "./BookingTable";
+import StatCard from "./StatCard";
 
 export default function Dashboard() {
   return (
-   <>
-     
-<div>
-     
+    <>
+      <div>
         <div className="bg-gray-950 min-h-screen">
-       
-<Navbar />
+          <Navbar />
           <div className="flex flex-row">
             <Sidebar />
-        <div className="flex-1 justify-between  p-5 ">
-          <div className="text-white font-onset font-semibold text-2xl  py-4">
-            <h2> Dashboard</h2>
+            <div>
+         <div className="flex flex-col w-full h-screen">
+          <div className="text-white text-2xl px-6 py-2 font-semibold "><h2>Dashboard</h2></div>
+                <div className="flex flex-row justify-between w-full gap-3 px-6 mt-1">
+      <StatCard
+        title="Total Customers"
+        value="1.5K+"
+        graphSrc="graph1.png"
+        iconSrc="Frame1.png"
+      />
+      <StatCard
+        title="Total Restaurants"
+        value="25"
+        graphSrc="graph2.png"
+        iconSrc="Frame2.png"
+      />
+      <StatCard
+        title="Total Reservations"
+        value="1000"
+        graphSrc="graph1.png"
+        iconSrc="Frame3.png"
+      />
+    </div>
+            
+
+            <div className="px-6 mt-6">
+              <BookingTable />
+            </div>
+            </div>
+         </div>
           </div>
-          <div className="flex flex-row justify-between gap-3 text-white px-6 ">
-            <div className="flex flex-row justify-between items-start bg-[#131E2E] p-6 h-40 w-[353.33px] rounded-xl gap-2">
-              <div className="flex flex-col gap-2">
-              Total Customers
-                <div className="font-semibold font-onset text-2xl">
-                  <h1>1.5K+</h1>
-                </div>
-               <div className="flex flex-row items-center gap-2">
-  <img src="graph1.png" alt="" className="w-12 h-4" />
-  <span className="text-[#CCCCCC] text-xs font-normal">vs last year</span>
-</div>
-              </div>
-
-              <img src="Frame1.png" alt="icon" className="w-8 h-8 mt-1 ml-auto" />
-            </div>
-           
-            <div className="flex flex-row justify-between items-start bg-[#131E2E] p-6 h-40 w-[353.33px] rounded-xl gap-2">
-              <div className="flex flex-col gap-2">
-              Total Restaurants
-                <div className="font-semibold font-onset text-2xl">
-                  <h1>25</h1>
-                </div>
-               <div className="flex flex-row items-center gap-2">
-  <img src="graph2.png" alt="" className="w-12 h-4" />
-  <span className="text-[#CCCCCC] text-xs font-normal">vs last year</span>
-</div>
-              </div>
-
-              <img src="Frame2.png" alt="icon" className="w-8 h-8 mt-1 ml-auto" />
-            </div>
-           
-            <div className="flex flex-row justify-between items-start bg-[#131E2E] p-6 h-40 w-[353.33px] rounded-xl gap-2">
-              <div className="flex flex-col gap-2">
-              Total Reservations
-                <div className="font-semibold font-onset text-2xl">
-                  <h1>1000</h1>
-                </div>
-               <div className="flex flex-row items-center gap-2">
-  <img src="graph1.png" alt="" className="w-12 h-4" />
-  <span className="text-[#CCCCCC] text-xs font-normal">vs last year</span>
-</div>
-              </div>
-
-              <img src="Frame3.png" alt="icon" className="w-8 h-8 mt-1 ml-auto" />
-            </div>
-           
-          </div>
-    
         </div>
-      
-        </div>
-     
       </div>
-      <div>
-      <BookingTable/>
-      </div>
-     
-  </div>
-
-   </>
-   
+    </>
   );
 }
