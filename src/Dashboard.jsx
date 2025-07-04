@@ -17,7 +17,7 @@ export default function Dashboard() {
           <div className="text-white font-onset font-semibold text-2xl  py-4">
             <h2> Dashboard</h2>
           </div>
-          <div className="flex flex-row gap-4 text-white px-6 ">
+          <div className="flex flex-row justify-between gap-3 text-white px-6 ">
             <div className="flex flex-row justify-between items-start bg-[#131E2E] p-6 h-40 w-[353.33px] rounded-xl gap-2">
               <div className="flex flex-col gap-2">
               Total Customers
