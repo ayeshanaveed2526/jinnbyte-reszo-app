@@ -12,7 +12,8 @@ export default function Dashboard() {
           <Navbar />
           <div className="flex flex-row">
             <Sidebar />
-            <div>
+            <div >
+              <div className="ml-8 ">
          <div className="flex flex-col w-full h-screen">
           <div className="text-white text-2xl px-6 py-2 font-semibold "><h2>Dashboard</h2></div>
                 <div className="flex flex-row justify-between w-full gap-3 px-6 mt-1">
@@ -39,6 +40,7 @@ export default function Dashboard() {
 
             <div className="px-6 mt-6">
               <BookingTable />
+            </div>
             </div>
             </div>
          </div>

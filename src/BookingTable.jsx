@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const bookingsData = Array.from({ length: 50 }, (_, index) => ({
+const bookingsData = Array.from({ length: 20 }, (_, index) => ({
   id: index + 1,
   restaurant: "Liberty Bite Bistro",
   customer: "Stephan",
@@ -9,7 +9,7 @@ const bookingsData = Array.from({ length: 50 }, (_, index) => ({
 
 const BookingTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
+  const itemsPerPage = 5;
 
 
   const totalPages = Math.ceil(bookingsData.length / itemsPerPage);
@@ -46,8 +46,7 @@ const BookingTable = () => {
       </div>
     ))}
   </div>
-  {/* Pagination controls OUTSIDE the table box */}
-  <div className="flex justify-between items-center bg-[#131E2E] mt-2 px-4 py-5  rounded-md">
+  <div className="flex justify-between items-center bg-[#131E2E] mt-2 px-4 py-4  rounded-md">
     <div className="text-sm text-gray-400">
       {`${(currentPage - 1) * itemsPerPage + 1} - ${
         Math.min(currentPage * itemsPerPage, bookingsData.length)

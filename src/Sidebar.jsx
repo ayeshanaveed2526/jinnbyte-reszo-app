@@ -4,7 +4,7 @@ export default function Sidebar() {
   return (
     <div>
        <div className="flex flex-row">
-        <div className="flex flex-col bg-[#131E2E] border-[1px] border-[#232931] px-6 py-4 w-[300px] h-[calc(100vh-64px)]">
+        <div className="flex flex-col bg-[#131E2E] border-[1px] border-[#232931] px-6 py-4 w-[300px] h-[calc(100vh-64px)]  ">
           <div className="flex flex-col h-full">
             <div className="flex flex-col gap-6 text-white">
               <div className="flex flex-col gap-6">
