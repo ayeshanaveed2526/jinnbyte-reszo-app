@@ -9,7 +9,7 @@ export default function Logout() {
     };
 
     return (
-        <div className="flex flex-row gap-3 px-4 py-3 mt-auto text-white">
+        <div className="flex flex-row gap-3 px-4 py-3 mt-auto text-white after:bg-[#B04759] hover:bg-[#B04759] rounded-[12px]">
             <img src="icon (6).png" alt="icon" className="w-6 h-6" />
             <button onClick={handleLogout} className="bg-transparent border-none text-white cursor-pointer">
                 Logout
