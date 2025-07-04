@@ -1,6 +1,7 @@
 import React from "react";  
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+  import BookingTable from "./BookingTable";
 
 export default function Dashboard() {
   return (
@@ -64,10 +65,15 @@ export default function Dashboard() {
             </div>
            
           </div>
+    
         </div>
-        </div>
-      </div>
       
+        </div>
+     
+      </div>
+      <div>
+      <BookingTable/>
+      </div>
      
   </div>
 
