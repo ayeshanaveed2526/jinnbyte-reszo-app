@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Logout from './Logout'
 export default function Sidebar() {
   return (
     <div>
@@ -33,14 +33,15 @@ export default function Sidebar() {
               </div>
             </div>
 
-            <div className="flex flex-row  gap-3 px-4 py-3 mt-auto text-white">
-              <img src="icon (6).png" alt="icon" className="w-6 h-6" />
-              <a href="Dashboard">Logout</a>
-            </div>
+           
           </div>
+              <div>
+<Logout />
+</div>
         </div>
-        
+       
       </div>
+   
     </div>
     );
   }
