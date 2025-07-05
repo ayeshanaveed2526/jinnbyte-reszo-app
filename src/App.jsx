@@ -4,6 +4,7 @@ import Login from './Login'
 import Dashboard from './Dashboard';
 import CustomerMang from './CustomerMang';
 import RestaurantMang from './RestaurantMang';
+ 
 
 
 const App = () => {
@@ -11,7 +12,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path='/login' element={<Login />} />
-        <Route path='/Dashboard' element={<Dashboard />} />
+        <Route path='/Dashboard' element={ <Dashboard />} />
          <Route path="/CustomerMang" element={<CustomerMang />} />
         <Route path='/RestaurantMang' element={<RestaurantMang/>}> </Route>
       </Routes>

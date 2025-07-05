@@ -6,7 +6,11 @@ const EmptyTable = () => {
       <div className="bg-[#131E2E] border border-gray-700 rounded-xl px-5 py-5  w-[1092px] h-[406.1px] ">
 <div className=' bg-[#1B2D47] border border-gray-600 rounded-xl px-4 py-2 text-gray-400 flex flex-row h-11 w-80 mb-3 '>
     <img src="searchicon.png" alt="search" />
-   <p>Search by name or email</p>
+<input
+  type="text"
+  placeholder="Search by name or email "
+  className='text-gray-400 text-sm font-semibold ml-2 w-full bg-transparent outline-none'
+/>
 </div>
 <div className=' rounded-xl mb-3'>
   <div className='bg-[#0B111A] flex flex-row justify-between px-4 py-2 text-white  w-[1050px] border border-gray-700'>

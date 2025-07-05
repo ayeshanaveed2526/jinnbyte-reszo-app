@@ -18,6 +18,7 @@ const Login = () => {
       setMessage("Invalid email or password");
     }
   };
+  
 
   return (
     <div className="bg-slate-950 flex flex-row justify-center items-center h-screen">
