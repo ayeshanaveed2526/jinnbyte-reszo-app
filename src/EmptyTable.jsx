@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function EmptyTable() {
+const EmptyTable = () => {
   return (
     <div>
       <div className="bg-[#131E2E] border border-gray-700 rounded-xl px-5 py-5  w-[1092px] h-[406.1px] ">
@@ -30,3 +30,6 @@ export default function EmptyTable() {
     </div>
   )
 }
+
+export default EmptyTable
+

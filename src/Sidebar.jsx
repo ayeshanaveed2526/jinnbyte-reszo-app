@@ -21,7 +21,7 @@ export default function Sidebar() {
                 </div>
                 <div className="flex items-center gap-3 px-4 py-3 hover:bg-[#B04759] active:bg-[#B04759] rounded-[12px] ">
                   <img src="icon3.png" alt="icon" className="w-6 h-6" />
-                  <a href="Dashboard">Restaurant Management</a>
+                 <Link to="/RestaurantMang"> Restaurant Management</Link>
                 </div>
                 <div className="flex items-center gap-3 px-4 py-3 active:bg-[#B04759] hover:bg-[#B04759] rounded-[12px]">
                   <img src="icon4.png" alt="icon" className="w-6 h-6" />
