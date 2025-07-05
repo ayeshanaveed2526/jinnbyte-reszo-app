@@ -1,8 +1,10 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import BookingTable from "./BookingTable";
+// import BookingTable from "./BookingTable";
 import StatCard from "./StatCard";
+import BookingPage from "./BookingPage";
+import Table from "./Table";
 
 export default function Dashboard() {
   return (
@@ -37,15 +39,18 @@ export default function Dashboard() {
       />
     </div>
             
-
-            <div className="px-6 mt-6">
-              <BookingTable />
+ <div className="px-6 mt-6">
+              <BookingPage/>
+           
             </div>
+            
             </div>
             </div>
          </div>
           </div>
+        
         </div>
+         
       </div>
     </>
   );
