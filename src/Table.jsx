@@ -7,23 +7,24 @@ const Table = ({
   columns = [],
   searchableFields = [],
   tabs = [],
+  itemsPerPage = 4,
 }) => {
-    
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState("");
   const [selectedTab, setSelectedTab] = useState(
     tabs && tabs.length > 0 ? tabs[0] : ""
   );
 
-  const itemsPerPage = 4;
+  
 
   // Filter by tabs (only if tabs exist)
-  const filteredByTab = tabs && tabs.length > 0
-    ? data.filter(
-        (item) =>
-          item.status?.toLowerCase() === selectedTab.toLowerCase()
-      )
-    : data;
+  const filteredByTab =
+    tabs && tabs.length > 0
+      ? data.filter(
+          (item) =>
+            item.status?.toLowerCase() === selectedTab.toLowerCase()
+        )
+      : data;
 
   // Filter by search
   const filteredData = useMemo(() => {
@@ -89,7 +90,7 @@ const Table = ({
         </div>
       )}
 
-   
+      {/* Table Header */}
       <div className="bg-[#0B111A] flex flex-row justify-between p-4 font-normal text-sm text-white border-b border-gray-700 rounded-t-md">
         {columns.map((col, idx) => (
           <div key={idx} className={col.width || "w-auto"}>
@@ -98,18 +99,20 @@ const Table = ({
         ))}
       </div>
 
-      
+      {/* Table Rows */}
       {currentData.length > 0 ? (
         currentData.map((item, idx) => (
           <div
-            key={item.id}
+            key={idx}
             className={`flex flex-row justify-between p-4 text-sm border-b border-gray-700 ${
               idx === currentData.length - 1 ? "rounded-b-md" : ""
             }`}
           >
             {columns.map((col, i) => (
               <div key={i} className={col.width || "w-auto"}>
-                {item[col.accessor]}
+                {React.isValidElement(item[col.accessor])
+                  ? item[col.accessor]
+                  : String(item[col.accessor])}
               </div>
             ))}
           </div>
@@ -118,11 +121,12 @@ const Table = ({
         <div className="text-center text-gray-400 py-6">No data available</div>
       )}
 
-     
+      {/* Pagination */}
       {filteredData.length > itemsPerPage && (
         <div className="flex justify-between items-center px-4 py-4">
-          <div className="text-sm text-white"> <span>No of items show per page</span> 
-            {`${(currentPage - 1) * itemsPerPage + 1} - ${Math.min(
+          <div className="text-sm text-white">
+            <span>No of items show per page</span>
+            {` ${(currentPage - 1) * itemsPerPage + 1} - ${Math.min(
               currentPage * itemsPerPage,
               filteredData.length
             )} of ${filteredData.length}`}
