@@ -29,7 +29,7 @@ export default function Sidebar() {
                 </div>
                 <div className="flex items-center gap-3 px-4 py-3 active:bg-[#B04759] hover:bg-[#B04759] rounded-[12px]">
                   <img src="icon5.png" alt="icon" className="w-6 h-6" />
-               <Link to="/Helpandsupport">Help and Support</Link>
+               <Link to="/HelpandSupport">Help and Support</Link>
                 </div>
               </div>
             </div>

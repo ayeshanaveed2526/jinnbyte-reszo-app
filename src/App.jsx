@@ -5,6 +5,8 @@ import Dashboard from './Dashboard';
 import CustomerMang from './CustomerMang';
 import RestaurantMang from './RestaurantMang';
 import Cuisine from './Cuisine';
+import HelpandSupport from './HelpandSupport';
+import 'react-phone-input-2/lib/style.css';
  
 
 
@@ -17,6 +19,7 @@ const App = () => {
          <Route path="/CustomerMang" element={<CustomerMang />} />
         <Route path='/RestaurantMang' element={<RestaurantMang/>}> </Route>
         <Route path='/Cuisine' element={<Cuisine/>}></Route>
+        <Route path='/HelpandSupport' element={<HelpandSupport/>}></Route>
       </Routes>
     </Router>
   )
