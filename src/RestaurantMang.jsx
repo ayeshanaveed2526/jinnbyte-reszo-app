@@ -1,37 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-
 import BookingPage from "./BookingPage";
 
 export default function RestaurantMang() {
-  const data = Array.from({ length: 50 }, (_, index) => ({
-     logo: <img src="icon (10).png" alt="logo" className="w-8 h-8 rounded-full" />,
-    restaurant: "Liberty Bite Bistro",
-    email: "Pedro.Schultz@gmail.com",
-    phone: "880-360-9764",
-    address: "1099 First Ave, Abuja, Nigeria",
-     status: "Approved",
-  }));
-  
-  
-  // const newColumns = [
-  //   { label: "Logo", accessor: "logo", width: "w-1/12" },
+  const [data, setData] = useState(
+    Array.from({ length: 50 }, (_, index) => ({
+      id: index + 1,
+      logo: (
+        <img
+          src="icon (10).png"
+          alt="logo"
+          className="w-8 bg-white h-8 rounded-full"
+        />
+      ),
+      restaurant: "Liberty Bite Bistro",
+      email: "Pedro.Schultz@gmail.com",
+      phone: "880-360-9764",
+      address: "1099 First Ave, Abuja, Nigeria",
+      status: "Approved",
+    }))
+  );
 
-  //   { label: "Email", accessor: "email", width: "w-3/12" },
-  //   { label: "Phone Number", accessor: "phone", width: "w-2/12" },
-  //   { label: "Address", accessor: "address", width: "w-3/12" },
-  // ];
-  // const colums = [
-  //   { label: "Restaurant Name", accessor: "restaurant", width: "w-3/12" },
-  // ];
+  const handleDelete = (id) => {
+    setData((prev) => prev.filter((item) => item.id !== id));
+  };
 
   const allcolumns = [
-        { label: "Logo", accessor: "logo", width: "w-1/12" },
+    { label: "No#", accessor: "id", width: "w-1/12" },
+    { label: "Logo", accessor: "logo", width: "w-1/12" },
     { label: "Restaurant Name", accessor: "restaurant", width: "w-3/12" },
     { label: "Email", accessor: "email", width: "w-3/12" },
     { label: "Phone Number", accessor: "phone", width: "w-2/12" },
     { label: "Address", accessor: "address", width: "w-3/12" },
+    {
+      label: "Action",
+      accessor: "action",
+      width: "w-2/12",
+      cell: (row) => (
+        <div className="flex gap-2">
+          <button>
+            <img src="viewicon.png" alt="" />
+          </button>
+          <button onClick={() => handleDelete(row.id)}>
+            <img src="deleteicon.png" alt="" />
+          </button>
+        </div>
+      ),
+    },
   ];
 
   return (
@@ -48,7 +64,7 @@ export default function RestaurantMang() {
             data={data}
             showTabs={true}
             showSearch={true}
-            itemsPerPage={8}
+            itemsPerPage={6}
           />
         </div>
       </div>

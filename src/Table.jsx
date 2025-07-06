@@ -15,18 +15,13 @@ const Table = ({
     tabs && tabs.length > 0 ? tabs[0] : ""
   );
 
-  
-
-  // Filter by tabs (only if tabs exist)
   const filteredByTab =
     tabs && tabs.length > 0
       ? data.filter(
-          (item) =>
-            item.status?.toLowerCase() === selectedTab.toLowerCase()
+          (item) => item.status?.toLowerCase() === selectedTab.toLowerCase()
         )
       : data;
 
-  // Filter by search
   const filteredData = useMemo(() => {
     if (!search || searchableFields.length === 0) return filteredByTab;
     return filteredByTab.filter((item) =>
@@ -44,7 +39,6 @@ const Table = ({
 
   return (
     <div className="bg-[#131E2E] text-white border border-gray-700 rounded-md">
-      {/* Header */}
       {(headLeft || headRight) && (
         <div className="flex justify-between items-center px-4 py-4 font-medium">
           <div>{headLeft}</div>
@@ -52,7 +46,6 @@ const Table = ({
         </div>
       )}
 
-      {/* Tabs */}
       {tabs && tabs.length > 0 && (
         <div className="flex space-x-4 px-4 mb-2">
           {tabs.map((tab) => (
@@ -64,8 +57,8 @@ const Table = ({
               }}
               className={`px-3 py-1 rounded ${
                 selectedTab === tab
-                  ? " text-white hover:text-[#DFCAB7] hover:underline decoration-[#DFCAB7]  "
-                  : "bg-gray-700 text-gray-300"
+                  ? "text-[#DFCAB7] underline underline-offset-8 decoration-[#DFCAB7]"
+                  : "text-gray-300 hover:text-[#DFCAB7] hover:underline hover:underline-offset-8 hover:decoration-[#DFCAB7]"
               }`}
             >
               {tab}
@@ -74,23 +67,35 @@ const Table = ({
         </div>
       )}
 
-      {/* Search */}
-      {searchableFields && searchableFields.length > 0 && (
-        <div className="px-4 mb-3">
-          <input
+      {/* <input
             type="text"
-            placeholder="Search..."
-            className="w-full p-2 rounded bg-[#1B2D47] text-white text-sm border border-gray-600"
+            
+            placeholder= " Search by Name or Email"
+            className=" p-2 rounded bg-[#1B2D47] text-white text-sm border border-gray-600 w-[342px]"
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
               setCurrentPage(1);
             }}
-          />
+          /> */}
+      {searchableFields && searchableFields.length > 0 && (
+        <div className="px-4 mb-3 ">
+          <div className=" bg-[#1B2D47] border border-gray-600 rounded-xl px-4 py-2 text-gray-400 flex flex-row h-11 w-80 mb-3 ">
+            <img src="searchicon.png" alt="search" />
+            <input
+              type="text"
+              placeholder="Search by name or email "
+              className="text-gray-400 text-sm font-semibold ml-2 w-full bg-transparent outline-none"
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+                setCurrentPage(1);
+              }}
+            />
+          </div>
         </div>
       )}
 
-      {/* Table Header */}
       <div className="bg-[#0B111A] flex flex-row justify-between p-4 font-normal text-sm text-white border-b border-gray-700 rounded-t-md">
         {columns.map((col, idx) => (
           <div key={idx} className={col.width || "w-auto"}>
@@ -99,7 +104,6 @@ const Table = ({
         ))}
       </div>
 
-      {/* Table Rows */}
       {currentData.length > 0 ? (
         currentData.map((item, idx) => (
           <div
@@ -108,20 +112,21 @@ const Table = ({
               idx === currentData.length - 1 ? "rounded-b-md" : ""
             }`}
           >
-            {columns.map((col, i) => (
-              <div key={i} className={col.width || "w-auto"}>
-                {React.isValidElement(item[col.accessor])
-                  ? item[col.accessor]
-                  : String(item[col.accessor])}
-              </div>
-            ))}
+           {columns.map((col, i) => (
+  <div key={i} className={col.width || "w-auto"}>
+    {col.cell
+      ? col.cell(item)
+      : React.isValidElement(item[col.accessor])
+        ? item[col.accessor]
+        : String(item[col.accessor] ?? "")}
+  </div>
+))}
           </div>
         ))
       ) : (
         <div className="text-center text-gray-400 py-6">No data available</div>
       )}
 
-      {/* Pagination */}
       {filteredData.length > itemsPerPage && (
         <div className="flex justify-between items-center px-4 py-4">
           <div className="text-sm text-white">
