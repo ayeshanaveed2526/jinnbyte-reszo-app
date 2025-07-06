@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
 export default function Support({ heading }) {
-  const [phone, setPhone] = React.useState('');
+  const [phone, setPhone] = useState('');
   return (
-    <div>
-      <div className='bg-[#131E2E] w-[1092px] h-[225px] p-5'>
+    <div className="w-full mx-auto max-w-4xl">
+      <div className='bg-[#131E2E] w-full min-w-full p-5 rounded-md'>
         <div className='text-white text-2xl font-semibold mb-4'>
           <h2>{heading}</h2>
         </div>
@@ -49,6 +49,7 @@ export default function Support({ heading }) {
                 borderRadius: '0.375rem',
                 height: '44px',
                 fontSize: '14px',
+                width: '100%',
               }}
               buttonStyle={{
                 backgroundColor: '#1B2D47',

@@ -14,7 +14,7 @@ export default function CustomerMang() {
           <div className="text-white text-2xl font-semibold mb-6">
             <h2>Customer Management</h2>
           </div>
-          <EmptyTable />
+        <div className='w-full'>  <EmptyTable /></div>
         </div>
       </div>
     </div>
