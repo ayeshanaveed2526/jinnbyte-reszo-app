@@ -25,11 +25,11 @@ export default function Sidebar() {
                 </div>
                 <div className="flex items-center gap-3 px-4 py-3 active:bg-[#B04759] hover:bg-[#B04759] rounded-[12px]">
                   <img src="icon4.png" alt="icon" className="w-6 h-6" />
-                  <a href="Dashboard">Cuisine</a>
+                 <Link to="/Cuisine">Cuisine</Link>
                 </div>
                 <div className="flex items-center gap-3 px-4 py-3 active:bg-[#B04759] hover:bg-[#B04759] rounded-[12px]">
                   <img src="icon5.png" alt="icon" className="w-6 h-6" />
-                  <a href="Dashboard">Help and Support</a>
+               <Link to="/Helpandsupport">Help and Support</Link>
                 </div>
               </div>
             </div>

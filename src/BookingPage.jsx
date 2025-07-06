@@ -14,6 +14,7 @@ const BookingPage = ({
   columns,
   data,
   itemsPerPage,
+  searchPlaceholder = "Search by name or email",
 }) => {
      const [selectedDate, setSelectedDate] = useState();
   const mainData = Array.from({ length: 25 }, (_, i) => ({
@@ -37,6 +38,7 @@ const BookingPage = ({
         data={tableData}
        columns={tableColumns}
        itemsPerPage={itemsPerPage}
+        
         headLeft={
        showHeadLeft && <div className="text-sm font-medium">Upcoming Bookings ({tableData.length})</div>
         }
@@ -53,6 +55,7 @@ const BookingPage = ({
           </div>
         }
         searchableFields={showSearch ? ["restaurant", "customer"] : []}
+        searchPlaceholder={searchPlaceholder}
         tabs={showTabs ? ["Approved", "Pending", "Rejected"] : []}
       />
     </div>

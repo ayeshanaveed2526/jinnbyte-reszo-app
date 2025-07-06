@@ -8,6 +8,7 @@ const Table = ({
   searchableFields = [],
   tabs = [],
   itemsPerPage = 4,
+  searchPlaceholder = "Search by name or email",
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState("");
@@ -84,7 +85,7 @@ const Table = ({
             <img src="searchicon.png" alt="search" />
             <input
               type="text"
-              placeholder="Search by name or email "
+              placeholder={searchPlaceholder}
               className="text-gray-400 text-sm font-semibold ml-2 w-full bg-transparent outline-none"
               value={search}
               onChange={(e) => {
