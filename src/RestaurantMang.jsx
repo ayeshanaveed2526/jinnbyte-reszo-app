@@ -25,7 +25,7 @@ export default function RestaurantMang() {
 
   const handleDelete = (id) => {
     setData((prev) => prev.filter((item) => item.id !== id));
-    setDeleteId(id);
+    setDeleteId(null);
   };
 
   const allcolumns = [
@@ -44,7 +44,7 @@ export default function RestaurantMang() {
           <button>
             <img src="viewicon.png" alt="" />
           </button>
-          <button onClick={() => handleDelete(row.id)}>
+          <button onClick={() => setDeleteId(row.id)}>
             <img src="deleteicon.png" alt="" />
           </button>
         </div>

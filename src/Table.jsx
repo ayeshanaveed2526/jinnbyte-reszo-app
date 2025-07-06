@@ -39,7 +39,7 @@ const Table = ({
   );
 
   return (
-    <div className="bg-[#131E2E] text-white border border-gray-700 rounded-md">
+    <div className="bg-[#131E2E] text-white  rounded-md">
       {(headLeft || headRight) && (
         <div className="flex justify-between items-center px-4 py-4 font-medium">
           <div>{headLeft}</div>
@@ -81,7 +81,7 @@ const Table = ({
           /> */}
       {searchableFields && searchableFields.length > 0 && (
         <div className="px-4 mb-3 ">
-          <div className=" bg-[#1B2D47] border border-gray-600 rounded-xl px-4 py-2 text-gray-400 flex flex-row h-11 w-80 mb-3 ">
+          <div className=" bg-[#1B2D47] border border-gray-600 rounded-xl  py-2 px-6 mb-5 text-gray-400 flex flex-row h-11 w-80  ">
             <img src="searchicon.png" alt="search" />
             <input
               type="text"
@@ -97,7 +97,7 @@ const Table = ({
         </div>
       )}
 
-      <div className="bg-[#0B111A] flex flex-row justify-between p-4 font-normal text-sm text-white border-b border-gray-700 rounded-t-md">
+      <div className="bg-[#0B111A] flex flex-row justify-between p-4 font-normal text-sm text-white border-b border-l border-r border-gray-700 rounded-t-md">
         {columns.map((col, idx) => (
           <div key={idx} className={col.width || "w-auto"}>
             {col.label}
@@ -109,7 +109,7 @@ const Table = ({
         currentData.map((item, idx) => (
           <div
             key={idx}
-            className={`flex flex-row justify-between p-4 text-sm border-b border-gray-700 ${
+            className={`flex flex-row justify-between p-4 text-sm border-b border-l border-r border-gray-700 ${
               idx === currentData.length - 1 ? "rounded-b-md" : ""
             }`}
           >
